@@ -5,11 +5,11 @@ export const databaseProviders = [
     provide: 'DATABASE_CONNECTION',
     useFactory: async () => await createConnection({
       type: 'mysql',
-      host: 'localhost',
+      host: 'http://ceted.feevale.br',
       port: 3306,
-      username: 'root',
-      password: '123456',
-      database: 'test_redesocial',
+      username: 'redesocial_tmpuser',
+      password: 'redesocial_tmp*123A*',
+      database: 'redesocial_tmp',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
       ],
