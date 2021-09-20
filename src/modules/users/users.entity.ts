@@ -1,7 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, Index, Timestamp } from 'typeorm';
 
 @Entity()
-export class wp_users { 
+export class wp_users {
   @PrimaryGeneratedColumn()
   ID: bigint;
 
@@ -24,7 +24,7 @@ export class wp_users {
   user_url: String;
 
   @Column()
-  user_registered: Date;
+  user_registered: Timestamp;
 
   @Column()
   user_activation_key: String;

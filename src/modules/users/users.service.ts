@@ -22,7 +22,7 @@ export class UsersService {
   }
   async register(data: UserRegisterDto): Promise<ResultDto>{
     let user = new wp_users()
-    var date = new Date();
+    let date = new Date().getUTCDate();
 
     user.ID;
     user.user_login = data.user_login;
@@ -30,7 +30,7 @@ export class UsersService {
     user.user_email = data.user_email;
     user.user_pass = bcrypt.hashSync(data.user_pass,8);
     user.user_nicename = data.user_nicename;
-    user.user_registered = date;
+    user.user_registered = Date.UTC;
     /** Demais dados não tratados */
     user.user_activation_key ='';
     user.user_status=0;
