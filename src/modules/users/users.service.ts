@@ -21,8 +21,8 @@ export class UsersService {
     return this.usersRepository.findOne(id);
   }
   async register(data: UserRegisterDto): Promise<ResultDto>{
-    let user = new wp_users()
-    let date = new Date().getUTCDate();
+    let user = new wp_users();
+    var dateUser = new Date();
 
     user.ID;
     user.user_login = data.user_login;
@@ -30,7 +30,7 @@ export class UsersService {
     user.user_email = data.user_email;
     user.user_pass = bcrypt.hashSync(data.user_pass,8);
     user.user_nicename = data.user_nicename;
-    user.user_registered = Date.UTC;
+    user.user_registered = dateUser;
     /** Demais dados não tratados */
     user.user_activation_key ='';
     user.user_status=0;

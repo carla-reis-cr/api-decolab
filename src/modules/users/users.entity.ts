@@ -24,7 +24,7 @@ export class wp_users {
   user_url: String;
 
   @Column()
-  user_registered: Timestamp;
+  user_registered: Date;
 
   @Column()
   user_activation_key: String;
